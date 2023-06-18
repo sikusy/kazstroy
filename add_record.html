@@ -1,0 +1,137 @@
+<!-- Файл: add_record.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Добавить запись</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 6px;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .form-container input[type="text"],
+        .form-container input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-container input[type="submit"] {
+            background-color: #e75d18;
+            color: #fff;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #d64f15;
+        }
+
+        .record-container {
+            max-width: 400px;
+            margin: 20px auto;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 6px;
+        }
+
+        .record-container h2 {
+            margin-top: 0;
+        }
+
+        .record-container p {
+            margin-bottom: 20px;
+        }
+
+        .record-container img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Добавить запись</h1>
+        <form method="POST" action="add_record.php" enctype="multipart/form-data">
+            <label for="title">Заголовок:</label>
+            <input type="text" name="title" required placeholder="Заголовок">
+
+            <label for="content">Содержимое:</label>
+            <input type="text" name="content" required placeholder="Содержимое">
+
+            <label for="image">Добавить файл (картинка):</label>
+            <input type="file" name="image">
+
+            <input type="submit" value="Добавить">
+        </form>
+    </div>
+
+    <div class="record-container">
+        <h2>Записи</h2>
+        <?php
+        // Параметры подключения к базе данных
+        $servername = "localhost";
+        $username = "root";
+        $password = "";
+        $dbname = "wpdb";
+
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+        // Проверка соединения
+        if ($conn->connect_error) {
+            die("Ошибка подключения: " . $conn->connect_error);
+        }
+
+        // SQL-запрос для выборки записей из таблицы
+        $sql = "SELECT * FROM records";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $title = $row['title'];
+                $content = $row['content'];
+                $image = $row['image'];
+
+                echo "<div>";
+                echo "<h3>$title</h3>";
+                echo "<p>$content</p>";
+                if ($image) {
+                    echo "<img src='uploads/$image'>";
+                }
+                echo "</div>";
+            }
+        } else {
+            echo "Нет доступных записей.";
+        }
+
+        // Закрытие соединения с базой данных
+        $conn->close();
+        ?>
+    </div>
+</body>
+</html>

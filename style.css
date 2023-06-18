@@ -1,0 +1,532 @@
+/* Основные стили */
+/* comments */
+.jn{
+  justify-content: center;
+  color: #0a0808;
+}
+ #video-background {
+      position: relative;
+      width: 80%;
+      height: 0%;
+      padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      margin-left: auto;
+      margin-right: auto;
+      display: block
+    }
+    #video-background video {
+      position: absolute;
+      width: 100%;
+      height: 50%;
+      object-fit: cover;
+      padding-left: 4%;
+      justify-content: center;
+     
+    }
+    #video-content{
+      height: 500px;
+      width: 1600px;
+      justify-content: center;
+      display: block
+    
+    }
+    @media (max-width: 767px) {
+      #video-background {
+        width: 100%;
+        height: 0;
+        padding-bottom: 56.25%; /* 16:9 aspect ratio */
+      }
+      #video-background video {
+        width: 100%;
+        height: 100%;
+        padding-left: 0;
+      }
+      #video-content {
+        height: auto;
+      }
+    }
+    
+    
+    
+    /* Стили для форм и отзывов */
+    .reviews-container {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    /* Стили для отзыва */
+    .review {
+      background-color: #e75d18;
+      padding: 20px;
+      border-radius: 10px;
+    }
+  
+    /* Стили для заголовка отзыва */
+    .review h3 {
+      margin: 0;
+      font-size: 18px;
+      color: white;
+    }
+    #comm {
+      background-image: url("mage.jpg");
+      height: 100%;
+      width: 100%;
+      background-position: center;
+      background-repeat: no-repeat;}
+  
+    /* Стили для текста отзыва */
+    .review p {
+      margin: 10px 0 0;
+      font-size: 14px;
+      color: white;
+    }
+  
+    /* Стили для формы добавления отзыва */
+    .form-container {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 400px;
+      margin: 0 auto;
+      margin-bottom: 20px; 
+    }
+  
+    /* Стили для кнопки отправки отзыва */
+    .form-container button {
+      background-color: #e75d18;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+    } 
+header {
+  background-color: #ffffff;
+  padding: 20px;
+  text-align: center;
+}
+ /* Стили для кнопки "Наверх" */
+ .scroll-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 50px;
+  height: 50px;
+  background-color: #e75d18;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 9999;
+  cursor: pointer;
+}
+
+.scroll-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+.ss{
+  color: #0a0808;
+}
+.but{
+  display: flex;
+      justify-content: center;
+      align-items: center;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+      transition: 300ms;
+      
+    }
+.bttn{
+  background-color: rgb(231, 93, 24);
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0px 5px #6c2d00, 0px 10px 10px rgba(0,0,0,0.25);
+}
+
+button:hover {
+  transform: translateY(5px);
+    box-shadow: 0px 0px transparent, 0px 5px 10px rgba(0,0,0,0.25);
+}
+
+button:focus {
+  outline: none;
+}
+.logo {
+  max-width: 400px;
+  height: auto;
+}
+#gm{
+background: #f6f1f1 url(gl.png); /* Фоновый цвет и фоновый рисунок*/
+		color: #f9f6f6; /*Цвет текста на странице*/
+    height: 800px;
+    width: 1620px;
+    background-attachment: fixed; /* Фон страницы фиксируется */
+		background-repeat: repeat-x; /* Изображение повторяется по горизонтали */
+}
+.content{
+  height: 800px;
+  width: 1600px;
+}
+.contente{
+  height: 500px;
+  width: 1600px;
+}
+p{
+  color: #393333;
+  
+}
+.osnov_text{
+  font-size: 48px; /* Размер шрифта */
+  font-weight: bold;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Значения для смещения, размытия и цвета */
+}
+
+
+/* Стили для выпадающего меню */
+.dropdown-menu {
+  display: none;
+  background-color: #0a0808;
+  padding: 10px;
+  position: absolute;
+  z-index: 1;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-menu li {
+  margin-bottom: 1px;
+}
+
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  justify-content: center;
+}
+
+
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 5px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: disc;
+}
+
+.ff {
+  background-color: #b65a18;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  width: 1600px;
+  left: 0;
+  bottom: 0;
+position: absolute;
+  z-index: 9999;
+}
+@media (max-width: 768px) {
+  .ff {
+    font-size: 14px;
+    padding: 10px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .ff {
+    font-size: 16px;
+    padding: 15px;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1025px) {
+  .ff {
+    font-size: 18px;
+    padding: 20px;
+    width: 1600px;
+  }
+}
+
+/* Медиа-запрос для адаптивности */
+@media (min-width: 768px) and (max-width: 1024px) {
+  header {
+    text-align: center;
+  }
+
+  nav ul {
+    display: block;
+    text-align: center;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+
+@media (max-width: 666px) {
+  header {
+    text-align: center;
+  }
+
+  nav ul {
+    display: block;
+    text-align: center;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+
+@media (min-width: 1025px) {
+  header {
+    text-align: center;
+  }
+
+  nav ul {
+    display: block;
+    text-align: center;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 10px 0;
+  }
+}
+
+
+/* Страниица о нас" */
+#about{
+  justify-content: center;
+}
+.table {
+  width: 100%;
+  
+}
+
+.td {
+  border: 0px solid black;
+  padding: 8px;
+  text-align: center;
+  display: block;
+  width: 100%;
+}
+
+  .o_nas{
+    background-color: #e75d18;
+    padding: 10px;
+    color: white;
+  }
+  .or{
+    background-color: rgb(231, 93, 24);
+    color: #fff;
+  }
+  
+  .new{
+    width: 200px;
+    height: 200px;
+  }
+
+
+
+/* Медиазапрос для адаптивности таблицы */
+@media (max-width: 600px) {
+  .table {
+    width: 100%;
+  }
+  
+ .td {
+  border: 0px solid black;
+  padding: 8px;
+  text-align: center;
+  display: block;
+  width: 100%;}
+ 
+}
+
+
+
+/* Страница объекты */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.image {
+  width: 30%;
+  margin: 25px  !important;
+  position: relative;
+}
+.image img {
+  width: 100%;
+}
+.caption {
+  position: absolute;
+  top: 10%;
+  right: -10px;
+  transform: rotate(270deg);
+  transform-origin: top right;
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .image {
+    width: 100%;
+  }
+}
+/*Страница контакты */
+.contacts-container {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #e75d18;
+  padding: 20px;
+  border-radius: 6px;
+  color: #fff;
+  justify-content: center;
+}
+
+.contacts-container h1 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.contact-info {
+  margin-top: 20px;
+  line-height: 1.5;
+}
+.text{
+  color: #f6f1f1;
+}
+
+/* футееер*/
+
+.social {display: inline-block;}
+.social a {
+	display: block;
+	width: 48px;
+	height: 48px;
+	margin: 0 10px 10px 0;
+	text-align: center;
+	color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 24px;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  justify-content: center;
+}
+.social a:hover {
+	border-color: #888;
+	opacity: .8;
+}
+.social svg {
+	margin-top: 7px;
+	width: 32px;
+	height: 32px;
+}
+.email a {background: #5bc7ff}
+.instagram a {background: #3f729b}
+.telegram a {background: #249bd7}
+.vk a {background: #4a76a8}
+.whatsapp a {background: #50b154}
+.youtube a {background: #c4302b}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  footer{
+    width: 100%;
+  }
+}
+@media (max-width: 666px) {
+  footer{
+    width: 100%;
+  }
+}
+@media (min-width: 1025px){
+  footer{
+    width: 100%;
+  }
+}
+
+/* для всплывающих картинок */
+#details-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+#details-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  padding: 20px;
+  max-width: 400px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+#details-popup img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+#details-popup #popup-caption {
+  font-size: 16px;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
